@@ -11,7 +11,7 @@ use discord_sdk::{
     Discord, DiscordApp, Subscriptions,
 };
 use stellwerksim::protocol::SystemInfo;
-use tokio::sync::mpsc::Receiver;
+use tokio::{sync::mpsc::Receiver, task::JoinHandle};
 
 use crate::Event;
 
@@ -24,7 +24,7 @@ pub struct PresenceActor {
 const APP_ID: i64 = 1076213464592289902;
 
 impl PresenceActor {
-    pub async fn spawn(receiver: Receiver<Event>) -> Result<()> {
+    pub async fn spawn(receiver: Receiver<Event>) -> Result<JoinHandle<()>> {
         let discord = PresenceActor::create_discord
             .retry(
                 &ConstantBuilder::default()
@@ -37,10 +37,10 @@ impl PresenceActor {
             receiver,
             last: None,
         };
-        tokio::spawn(async move {
+        let handle = tokio::spawn(async move {
             actor.start().await;
         });
-        Ok(())
+        Ok(handle)
     }
 
     async fn start(mut self) {
@@ -52,7 +52,7 @@ impl PresenceActor {
                     .expect("Failed");
             }
             let Some(event) = self.receiver.recv().await else {
-                panic!("blub");
+                return;
             };
             tracing::debug!(event = ?event);
             match event {
