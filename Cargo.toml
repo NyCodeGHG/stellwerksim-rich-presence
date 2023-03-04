@@ -13,8 +13,9 @@ stellwerksim = { version = "0.2", default-features = false }
 tokio = { version = "1", features = ["full"] }
 discord-sdk = { git = "https://github.com/NyCodeGHG/discord-sdk", branch = "feature/buttons" }
 backon = "0.4"
-winit = "0.28"
 tray-icon = "0.4"
+image = "0.24"
+tao = "0.18"
 
 [profile.release]
 lto = true
