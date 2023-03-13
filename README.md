@@ -11,6 +11,9 @@ Lightweight [Discord](https://discord.com) Rich Presence Plugin for StellwerkSim
 
 ### Install from crates.io
 
+> **Note**
+> Not yet available on crates.io because we depend on [EmbarkStudios/discord-sdk#24](https://github.com/EmbarkStudios/discord-sdk/pull/24).
+
 ```
 cargo install stellwerksim-rich-presence
 ```
