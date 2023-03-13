@@ -14,3 +14,4 @@ jobs:
           token: ${{ secrets.GH_SECRET }}
           bump-minor-pre-major: true
           bump-patch-for-minor-pre-major: true
+          include-v-in-tag: false
