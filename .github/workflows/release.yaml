@@ -30,7 +30,7 @@ jobs:
       - run: cargo build --release --target ${{ matrix.run.target }}
       - run: |
           mkdir archive
-          if [[ "$RUNNER_OS" == "Windows" ]] then
+          if [ "$RUNNER_OS" == "Windows" ]; then
             cp target/${{ matrix.run.target }}/release/stellwerksim-rich-presence.exe "stellwerksim-rich-presence.exe"
           else
             cp target/${{ matrix.run.target }}/release/stellwerksim-rich-presence "stellwerksim-rich-presence"
