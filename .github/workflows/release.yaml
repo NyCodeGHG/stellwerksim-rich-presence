@@ -38,10 +38,11 @@ jobs:
           FILENAME="stellwerksim-rich-presence-$VERSION-$TARGET.tar.gz"
           tar -czf $FILENAME stellwerksim-rich-presence* README.md LICENSE
           echo $(sha256sum $FILENAME) > "$FILENAME.sha256"
+        shell: bash
         env:
           VERSION: ${{ github.ref_name }}
           TARGET: ${{ matrix.run.target }}
-      - uses: softprops/action-gh-release
+      - uses: softprops/action-gh-release@v1
         with:
           files: stellwerksim-rich-presence-*
 
