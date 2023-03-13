@@ -7,6 +7,8 @@ jobs:
   release:
     name: Release ${{ matrix.run.target }}
     runs-on: ${{ matrix.run.runner }}
+    permissions:
+      contents: write
     strategy:
       fail-fast: false
       matrix:
