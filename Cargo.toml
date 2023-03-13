@@ -7,6 +7,7 @@ description = "A Discord Rich Presence Plugin for StellwerkSim"
 keywords = ["stellwerksim", "discord", "rich presence"]
 homepage = "https://github.com/NyCodeGHG/stellwerksim-rich-presence"
 repository = "https://github.com/NyCodeGHG/stellwerksim-rich-presence"
+license = "GPL-3.0-only"
 
 [dependencies]
 color-eyre = "0.6"

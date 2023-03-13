@@ -8,7 +8,7 @@ async fn main() -> Result<()> {
     tracing_subscriber::fmt::init();
     let (sender, receiver) = channel(1);
 
-    StsActor::spawn(sender.clone()).await?;
+    StsActor::spawn(sender).await?;
     PresenceActor::spawn(receiver).await?;
 
     tracing::info!("Registering Ctrl+C handler");
