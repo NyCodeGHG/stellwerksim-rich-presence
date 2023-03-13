@@ -126,6 +126,6 @@ fn build_activity_builder(presence: &SystemInfo) -> ActivityBuilder<WithButtons>
         })
         .button(Button {
             label: "StellwerkSim Rich Presence".to_string(),
-            url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ".to_string(),
+            url: "https://github.com/NyCodeGHG/stellwerksim-rich-presence".to_string(),
         })
 }
