@@ -4,6 +4,9 @@ version = "0.1.0"
 edition = "2021"
 authors = ["Marie Ramlow <me@nycode.dev>"]
 description = "A Discord Rich Presence Plugin for StellwerkSim"
+keywords = ["stellwerksim", "discord", "rich presence"]
+homepage = "https://github.com/NyCodeGHG/stellwerksim-rich-presence"
+repository = "https://github.com/NyCodeGHG/stellwerksim-rich-presence"
 
 [dependencies]
 color-eyre = "0.6"
@@ -13,9 +16,6 @@ stellwerksim = { version = "0.2", default-features = false }
 tokio = { version = "1", features = ["full"] }
 discord-sdk = { git = "https://github.com/NyCodeGHG/discord-sdk", branch = "feature/buttons" }
 backon = "0.4"
-tray-icon = "0.4"
-image = "0.24"
-tao = "0.18"
 
 [profile.release]
 lto = true

@@ -45,19 +45,19 @@ impl PresenceActor {
 
     async fn start(mut self) {
         loop {
-            if let Some(ref last) = self.last {
-                self.discord
-                    .update_activity(build_activity_builder(last))
-                    .await
-                    .expect("Failed");
-            }
             let Some(event) = self.receiver.recv().await else {
                 return;
             };
             tracing::debug!(event = ?event);
             match event {
                 Event::UpdatePresence(ref presence) => {
+                    if let Some(ref last) = self.last {
+                        if last == presence {
+                            continue;
+                        }
+                    }
                     self.last = Some(presence.clone());
+                    tracing::trace!(presence = ?presence, "Updating presence");
                     self.discord
                         .update_activity(build_activity_builder(presence))
                         .await
