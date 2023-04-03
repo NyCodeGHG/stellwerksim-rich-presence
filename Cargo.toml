@@ -15,7 +15,7 @@ tracing = "0.1"
 tracing-subscriber = "0.3"
 stellwerksim = { version = "0.2", default-features = false }
 tokio = { version = "1", features = ["full"] }
-discord-sdk = { git = "https://github.com/NyCodeGHG/discord-sdk", branch = "feature/buttons" }
+discord-sdk = "0.3.4"
 backon = "0.4"
 
 [profile.release]

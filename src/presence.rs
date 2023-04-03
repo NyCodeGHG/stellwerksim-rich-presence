@@ -3,7 +3,7 @@ use std::time::{Duration, SystemTime};
 use backon::{ConstantBuilder, Retryable};
 use color_eyre::Result;
 use discord_sdk::{
-    activity::{ActivityBuilder, Assets, Button, WithButtons},
+    activity::{ActivityBuilder, Assets, Button},
     wheel::{
         UserState::{Connected, Disconnected},
         Wheel,
@@ -101,7 +101,7 @@ impl PresenceActor {
     }
 }
 
-fn build_activity_builder(presence: &SystemInfo) -> ActivityBuilder<WithButtons> {
+fn build_activity_builder(presence: &SystemInfo) -> ActivityBuilder {
     ActivityBuilder::new()
         .assets(Assets {
             large_image: Some("stellwerksim".to_string()),
@@ -116,7 +116,6 @@ fn build_activity_builder(presence: &SystemInfo) -> ActivityBuilder<WithButtons>
         })
         .instance(true)
         .start_timestamp(SystemTime::now())
-        .with_buttons()
         .button(Button {
             label: "Stellwerk".to_string(),
             url: format!(
