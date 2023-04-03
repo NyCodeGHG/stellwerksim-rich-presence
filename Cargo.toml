@@ -1,6 +1,6 @@
 [package]
 name = "stellwerksim-rich-presence"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 authors = ["Marie Ramlow <me@nycode.dev>"]
 description = "A Discord Rich Presence Plugin for StellwerkSim"

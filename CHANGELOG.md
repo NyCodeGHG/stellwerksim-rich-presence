@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.1](https://github.com/NyCodeGHG/stellwerksim-rich-presence/compare/0.1.0...0.1.1) (2023-04-03)
+
+
+### Bug Fixes
+
+* migrate to merged discord-sdk buttons ([9e26549](https://github.com/NyCodeGHG/stellwerksim-rich-presence/commit/9e26549274f840f8185bb1d93de60d1cba6cadd4))
+
 ## 0.1.0 (2023-03-13)
 
 
