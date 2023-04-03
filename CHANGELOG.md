@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.2](https://github.com/NyCodeGHG/stellwerksim-rich-presence/compare/0.1.1...0.1.2) (2023-04-03)
+
+
+### Bug Fixes
+
+* change 'rich presence' keyword to 'rich-presence' ([7d93f17](https://github.com/NyCodeGHG/stellwerksim-rich-presence/commit/7d93f175bd7087c45740c66fa7956d463268235b))
+
 ## [0.1.1](https://github.com/NyCodeGHG/stellwerksim-rich-presence/compare/0.1.0...0.1.1) (2023-04-03)
 
 
